@@ -103,6 +103,8 @@ rm -rf ./feeds/packages/net/v2ray-geodata/Makefile
 wget https://raw.githubusercontent.com/QiuSimons/openwrt-mos/master/v2ray-geodata/Makefile -O feeds/packages/net/v2ray-geodata/Makefile
 wget -qO - https://github.com/immortalwrt/immortalwrt/commit/73e5679.patch | patch -p1
 wget https://github.com/immortalwrt/immortalwrt/raw/openwrt-23.05/target/linux/generic/backport-5.15/051-v5.18-bpf-Add-config-to-allow-loading-modules-with-BTF-mismatch.patch -O target/linux/generic/backport-5.15/051-v5.18-bpf-Add-config-to-allow-loading-modules-with-BTF-mismatch.patch
+cp -rf ../OpenClash_pkg/luci-app-openclash ./feeds/packages/luci-app-openclash
+ln -sf ../../../feeds/packages/luci-app-openclash ./package/feeds/packages/luci-app-openclash
 pushd feeds/packages
 patch -p1 <../../../PATCH/cgroupfs-mount/0001-fix-cgroupfs-mount.patch
 popd
